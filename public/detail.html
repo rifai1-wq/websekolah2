@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail Berita | MAN 4 Bantul</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .post-meta i {
+      margin-right: 4px;
+    }
+    .badge-tag {
+      background-color: #e9ecef;
+      color: #333;
+    }
+        footer {
+      background-color: #165a45; /* Dark green */
+      color: #e3f3eb;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #a6d8b6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .footer-branding {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: white;
+    }
+
+    .footer-social a {
+      color: #a6d8b6;
+      font-size: 1.25rem;
+      margin-right: 1rem;
+    }
+
+    .footer-social a:hover {
+      color: #72c16e;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+  <header>
+    <!-- Navbar atas dengan background hijau toska -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #00796b;">
+      <div class="container d-flex justify-content-between align-items-center py-2">
+
+        <!-- Bagian kiri: logo dan teks -->
+        <a href="#" class="d-flex align-items-center gap-3 text-white text-decoration-none">
+          <span class="border border-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+            style="width: 40px; height: 40px; font-size: 1rem;">M4B</span>
+          <div class="d-none d-md-block">
+            <div class="fw-bold" style="font-size: 1.125rem;">MAN 4 BANTUL</div>
+            <small style="font-size: 0.75rem;">Madrasah Aliyah Negeri 4 Bantul</small>
+          </div>
+        </a>
+
+        <!-- Bagian kanan: kontak telepon dan email -->
+        <div class="d-flex gap-4 align-items-center text-white small">
+          <div class="d-flex align-items-center gap-1">
+            <i class="bi bi-telephone-fill"></i> (0274) 123456
+          </div>
+          <div class="d-flex align-items-center gap-1">
+            <i class="bi bi-envelope-fill"></i> info@man4bantul.sch.id
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar menu bawah putih -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" style="top: 48px;">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold active" aria-current="page" href="index.php">Beranda</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Akademik</a></li>
+            <li class="nav-item"><a class="nav-link" href="arsip-berita.html">Berita</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+          </ul>
+
+          <a href="#" class="btn btn-success btn-sm px-3">Portal Siswa</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<!-- Breadcrumb -->
+<div class="container mt-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+      <li class="breadcrumb-item"><a href="arsip-berita.html">Berita</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detail Berita</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- Konten -->
+<div class="container mt-3">
+  <div class="row">
+    <!-- Konten utama -->
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-body">
+            <div class="d-flex flex-column align-items-start mb-4">
+                <a href="arsip-berita.html" class="btn btn-outline-secondary btn-md mb-4">&larr; Kembali ke Arsip Berita</a>
+                <span class="badge btn btn-outline bg-success">Prestasi</span>
+            </div>
+            <h2 class="fw-bold">MAN 4 Bantul Raih Akreditasi A dari BAN-S/M</h2>
+            <div class="text-muted post-meta mb-3">
+                <i class="bi bi-person"></i> Admin MAN 4 Bantul |
+                <i class="bi bi-calendar"></i> 28 Januari 2025, 10:30 WIB |
+                <i class="bi bi-eye"></i> 456 kali dibaca
+            </div>
+
+            <!-- Gambar besar tapi dengan style object-fit dan rounded -->
+            <img src="https://placehold.co/300x200/png?text=image" class="img-fluid rounded w-full" style="width: 100%; height: auto; margin-bottom: 30px;" alt="Gambar Berita">
+
+            <p><strong>BANTUL</strong> – Madrasah Aliyah Negeri (MAN) 4 Bantul kembali meraih prestasi membanggakan dengan berhasil mempertahankan akreditasi A dari Badan Akreditasi Nasional Sekolah/Madrasah (BAN-S/M) untuk periode 2025-2030.</p>
+
+            <p>Pencapaian ini merupakan hasil kerja keras seluruh civitas akademika MAN 4 Bantul dalam meningkatkan kualitas pendidikan...</p>
+
+            <h5 class="mt-4">Delapan Standar Nasional Pendidikan</h5>
+            <ul>
+                <li>Standar Kompetensi Lulusan</li>
+                <li>Standar Isi</li>
+                <li>Standar Proses</li>
+                <li>Standar Sarana dan Prasarana</li>
+                <li>...</li>
+            </ul>
+
+            <h5 class="mt-4">Komitmen Peningkatan Kualitas</h5>
+            <ul>
+                <li>Pelatihan guru secara rutin</li>
+                <li>Program ekstrakurikuler dan pengembangan bakat siswa</li>
+                <li>Peningkatan kerjasama dengan berbagai pihak</li>
+            </ul>
+
+            <div class="alert alert-success">
+                <strong>Tentang Akreditasi Sekolah:</strong><br>
+                Akreditasi adalah kegiatan penilaian kelayakan program pendidikan berdasarkan kriteria tertentu...
+            </div>
+
+            <div class="mb-4">
+                <span class="d-inline-block mb-2 text-muted"><i class="bi bi-tags"></i> Tags:</span><br>
+                
+                <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">Akreditasi</span>
+                <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">BAN-S/M</span>
+                <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">Prestasi</span>
+                <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">Kualitas Pendidikan</span>
+            </div>
+
+            <div class="mt-4">
+                <span>Bagikan Artikel:</span>
+                <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm me-2"><i class="bi bi-facebook"></i> Facebook</a>
+                <a href="#" class="btn btn-success btn-sm"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar-berita" style="flex: 1;">
+
+        <!-- Card Berita Terkait -->
+        <div class="card-berita-terkait" style="background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-bottom: 24px;">
+            <div style="background:#fff; padding:16px; ">
+                <h3>Berita Terkait</h3>
+
+                <div style="display: flex; gap: 12px; margin-bottom: 12px; align-items: center;">
+                    <img src="https://placehold.co/300x200/png?text=image" alt="Berita 1" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                    <a href="#" style="font-weight: 600; color:#333; text-decoration: none;">Ahmad Fauzi Raih Juara 1 Olimpiade Matematika</a><br>
+                    <small style="color: #666;">22 Jan 2025</small>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-bottom: 12px; align-items: center;">
+                    <img src="https://placehold.co/300x200/png?text=image" alt="Berita 2" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                    <a href="#" style="font-weight: 600; color:#333; text-decoration: none;">Peresmian Laboratorium Sains Modern</a><br>
+                    <small style="color: #666;">20 Jan 2025</small>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <img src="https://placehold.co/300x200/png?text=image" alt="Berita 3" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                    <a href="#" style="font-weight: 600; color:#333; text-decoration: none;">Kunjungan Industri ke PT Krakatau Steel</a><br>
+                    <small style="color: #666;">18 Jan 2025</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Berita Populer -->
+        <div class="card-berita-populer" style="background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px;">
+            <h5 class="fw-bold mb-3">Berita Populer</h5>
+
+            <div class="mb-3 d-flex align-items-start">
+                <span class="badge bg-success me-2" style="width: 24px; height: 24px; border-radius: 10%; display: flex; align-items: center; justify-content: center;">1</span>
+                <div>
+                <div class="fw-semibold text-dark">MAN 4 Bantul Raih Akreditasi A dari BAN-S/M</div>
+                <small class="text-muted">456 views</small>
+                </div>
+            </div>
+
+            <div class="mb-3 d-flex align-items-start">
+                <span class="badge bg-secondary me-2" style="width: 24px; height: 24px; border-radius: 10%; display: flex; align-items: center; justify-content: center;">2</span>
+                <div>
+                <div class="fw-semibold text-dark">Ahmad Fauzi Raih Juara 1 Olimpiade Matematika</div>
+                <small class="text-muted">312 views</small>
+                </div>
+            </div>
+
+            <div class="mb-1 d-flex align-items-start">
+                <span class="badge bg-secondary me-2" style="width: 24px; height: 24px; border-radius: 10%; display: flex; align-items: center; justify-content: center;">3</span>
+                <div>
+                <div class="fw-semibold text-dark">Siti Nurhaliza Juara 2 Lomba Karya Tulis Ilmiah</div>
+                <small class="text-muted">278 views</small>
+                </div>
+            </div>
+            </div>
+
+        </aside>
+
+  </div>
+</div>
+
+<!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <div class="footer-branding mb-2 d-flex align-items-center gap-2">
+            <span class="border border-2 border-success rounded-circle d-flex align-items-center justify-content-center"
+              style="min-width: 40px; height: 40px; font-size: 1.25rem;">M4B</span>
+            MAN 4 BANTUL
+          </div>
+          <p>Madrasah Aliyah Negeri 4 Bantul berkomitmen memberikan pendidikan berkualitas yang
+            mengintegrasikan ilmu pengetahuan dan nilai-nilai Islam.</p>
+          <div class="footer-social d-flex gap-3">
+            <a href="#" aria-label="Facebook MAN 4 Bantul"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter MAN 4 Bantul"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="YouTube MAN 4 Bantul"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="Instagram MAN 4 Bantul"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h6 class="text-white fw-semibold mb-3">Menu Utama</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Profil Sekolah</a></li>
+            <li><a href="#">Visi & Misi</a></li>
+            <li><a href="#">Struktur Organisasi</a></li>
+            <li><a href="#">Fasilitas</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="text-white fw-semibold mb-3">Akademik</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Kurikulum</a></li>
+            <li><a href="#">Program Studi</a></li>
+            <li><a href="#">Ekstrakurikuler</a></li>
+            <li><a href="#">Berita & Prestasi</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-white fw-semibold mb-3">Kontak</h6>
+          <address style="font-style: normal;">
+            Jl. Raya Imogiri No.121, Bantul, DIY 55771<br />
+            Telepon: (0274) 123456<br />
+            Email: <a href="mailto:info@m4bantul.ac.id" class="text-white-50">info@m4bantul.ac.id</a>
+          </address>
+        </div>
+      </div>
+      <div class="text-center mt-4 pt-4 border-top border-white-25">
+        © 2025 MAN 4 Bantul. Semua hak cipta dilindungi.
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAN 4 Bantul</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Custom styles */
+    .nav-link {
+      font-weight: 600;
+    }
+
+    .btn-portal {
+      background-color: #00854c;
+      color: white;
+      font-weight: 600;
+    }
+
+    .btn-portal:hover {
+      background-color: #006633;
+      color: white;
+    }
+
+    .stat-icon {
+      font-size: 2rem;
+    }
+    .card {
+  background-color: #ffffff; /* White background for all cards */
+  padding: 1.25rem; /* Add consistent padding inside the card */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2); /* Enhance the hover shadow */
+}
+
+  /* Adjust the badges to be more compact */
+.card-news-type {
+  font-size: 0.75rem; /* Smaller font size */
+  padding: 0.25rem 0.5rem; /* Less padding */
+  border-radius: 1.5rem; /* Slightly rounded corners */
+  color: white;
+  text-transform: uppercase;
+  user-select: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  white-space: nowrap; /* Keeps the text from wrapping */
+}
+    .card-news-type.Penting {
+      background-color: #dc3545;
+    }
+
+    .card-news-type.Info {
+      background-color: #0d6efd;
+    }
+
+    .card-news-type.Kegiatan {
+      background-color: #198754;
+    }
+
+    .card-news-type.Pengumuman {
+      background-color: #0dcaf0;
+    }
+
+    .card-news-type.Prestasi {
+      background-color: #ffc107;
+      color: black;
+    }
+    /* Additional small-badge for extra compactness if needed */
+.small-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.4rem; /* Less padding */
+  border-radius: 1.25rem;
+}
+
+    footer {
+      background-color: #165a45; /* Dark green */
+      color: #e3f3eb;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #a6d8b6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .footer-branding {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: white;
+    }
+
+    .footer-social a {
+      color: #a6d8b6;
+      font-size: 1.25rem;
+      margin-right: 1rem;
+    }
+
+    .footer-social a:hover {
+      color: #72c16e;
+    }
+
+    /* Carousel caption dark overlay */
+     .carousel-custom {
+      background-color: #aaa;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 500px;
+    }
+
+    .carousel-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 500px;
+    }
+
+    .carousel-text {
+      flex: 1;
+      padding: 40px;
+      color: white;
+    }
+
+    .carousel-text .badge {
+      background-color: #009688;
+    }
+
+    .carousel-text h2 {
+      font-weight: bold;
+    }
+
+    .carousel-img {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      background-color: white;
+    }
+
+    /* Ubah tampilan panah carousel */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-image: none;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-control-prev-icon::after,
+    .carousel-control-next-icon::after {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 16px;
+      color: #fff;
+      content: '\f104'; /* Panah kiri */
+    }
+
+    .carousel-control-next-icon::after {
+      content: '\f105'; /* Panah kanan */
+    }
+    
+    .hero-section {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      position: relative;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: #165a45;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #198754;
+      border-radius: 2px;
+    }
+    
+    .stat-card {
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .news-card {
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .card-img-fallback {
+        height: 180px;
+      }
+      
+      .carousel-item {
+        height: 350px;
+      }
+      
+      .carousel-caption-bg {
+        max-width: 600px;
+        padding: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .carousel-caption-bg {
+        left: 0.75rem;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <header>
+    <!-- Navbar atas dengan background hijau toska -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #00796b;">
+      <div class="container d-flex justify-content-between align-items-center py-2">
+
+        <!-- Bagian kiri: logo dan teks -->
+        <a href="#" class="d-flex align-items-center gap-3 text-white text-decoration-none">
+          <span class="border border-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+            style="width: 40px; height: 40px; font-size: 1rem;">M4B</span>
+          <div class="d-none d-md-block">
+            <div class="fw-bold" style="font-size: 1.125rem;">MAN 4 BANTUL</div>
+            <small style="font-size: 0.75rem;">Madrasah Aliyah Negeri 4 Bantul</small>
+          </div>
+        </a>
+
+        <!-- Bagian kanan: kontak telepon dan email -->
+        <div class="d-flex gap-4 align-items-center text-white small">
+          <div class="d-flex align-items-center gap-1">
+            <i class="bi bi-telephone-fill"></i> (0274) 123456
+          </div>
+          <div class="d-flex align-items-center gap-1">
+            <i class="bi bi-envelope-fill"></i> info@man4bantul.sch.id
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar menu bawah putih -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" style="top: 48px;">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold active" aria-current="page" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Akademik</a></li>
+            <li class="nav-item"><a class="nav-link" href="arsip-berita.html">Berita</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+          </ul>
+
+          <a href="#" class="btn btn-success btn-sm px-3">Portal Siswa</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mt-5 mb-5">
+
+      <!-- Carousel -->
+  <div class="container my-4">
+    <div id="customCarousel" class="carousel slide carousel-custom" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-content">
+            <!-- Text Content -->
+            <div class="carousel-text">
+              <span class="badge">Berita Utama</span>
+              <h2 class="mt-3">MAN 4 Bantul Raih Akreditasi A dari BAN-S/M</h2>
+              <p>Sekolah berhasil mempertahankan akreditasi A untuk periode 2025-2030 dengan skor 95 dari 100 poin penilaian standar nasional pendidikan.</p>
+              <a href="#" class="btn btn-success btn-sm">Baca Selengkapnya</a>
+              <p class="mt-2 mb-0"><i class="far fa-clock"></i> 28 Januari 2025</p>
+            </div>
+            <!-- Image Background -->
+            <div class="carousel-img" style="background-image: url('https://via.placeholder.com/600x400');">
+              <!-- Ganti URL dengan gambar asli -->
+            </div>
+          </div>
+        </div>
+        <!-- Tambahkan carousel-item tambahan di sini jika ingin slide lain -->
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Sebelumnya</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Berikutnya</span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Stats -->
+    <section class="container mt-5 text-center">
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="text-success stat-icon mb-2">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <h5 class="fw-bold">850+</h5>
+          <p class="mb-0">Siswa Aktif</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-success stat-icon mb-2">
+            <i class="bi bi-book-half"></i>
+          </div>
+          <h5 class="fw-bold">45+</h5>
+          <p class="mb-0">Guru Profesional</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-success stat-icon mb-2">
+            <i class="bi bi-trophy-fill"></i>
+          </div>
+          <h5 class="fw-bold">25+</h5>
+          <p class="mb-0">Prestasi Tahun Ini</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-success stat-icon mb-2">
+            <i class="bi bi-calendar-event-fill"></i>
+          </div>
+          <h5 class="fw-bold">15+</h5>
+          <p class="mb-0">Tahun Berdiri</p>
+        </div>
+      </div>
+    </section>
+<section class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-bold">
+      <i class="bi bi-bell-fill text-success me-2"></i>Pengumuman Terbaru
+    </h4>
+    <a href="#" class="btn btn-outline-success">Lihat Semua <i class="bi bi-chevron-right"></i></a>
+  </div>
+
+  <div class="row g-4">
+    <!-- Kartu 1 -->
+<div class="col-md-4">
+  <div class="card p-4 shadow-sm h-100">
+    <span class="card-news-type Penting mb-2 d-inline-block small-badge">Penting</span>
+    <h6 class="fw-semibold">Jadwal Ujian Tengah Semester Genap 2024/2025</h6>
+    <p>Ujian Tengah Semester Genap akan dilaksanakan mulai tanggal 15-22 Februari 2025. Siswa diharapkan mempersiapkan diri dengan baik.</p>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+      <small class="text-muted"><i class="bi bi-clock me-1"></i>2 hari yang lalu</small>
+      <a href="#" class="text-success fw-semibold small text-decoration-none">Baca <i class="bi bi-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Kartu 2 -->
+<div class="col-md-4">
+  <div class="card p-4 shadow-sm h-100">
+    <span class="card-news-type Info mb-2 d-inline-block  small-badge">Info</span>
+    <h6 class="fw-semibold">Pendaftaran Ekstrakurikuler Semester Genap</h6>
+    <p>Pendaftaran ekstrakurikuler semester genap dibuka hingga 31 Januari 2025. Tersedia 15 pilihan ekstrakurikuler.</p>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+      <small class="text-muted"><i class="bi bi-clock me-1"></i>5 hari yang lalu</small>
+      <a href="#" class="text-success fw-semibold small text-decoration-none">Baca <i class="bi bi-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Kartu 3 -->
+<div class="col-md-4">
+  <div class="card p-4 shadow-sm h-100">
+    <span class="card-news-type Kegiatan mb-2 d-inline-block  small-badge">Kegiatan</span>
+    <h6 class="fw-semibold">Pekan Orientasi Siswa Baru 2025</h6>
+    <p>Kegiatan POSB akan dilaksanakan tanggal 10-12 Juli 2025. Informasi lengkap akan disampaikan kemudian.</p>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+      <small class="text-muted"><i class="bi bi-clock me-1"></i>1 minggu yang lalu</small>
+      <a href="#" class="text-success fw-semibold small text-decoration-none">Baca <i class="bi bi-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+
+<!-- Berita Terbaru -->
+<section class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="fw-bold">Berita Terbaru</h4>
+    <a href="arsip-berita.html" class="btn btn-outline-secondary mt-3 mt-md-0">Arsip Berita &rsaquo;</a>
+  </div>
+  <div class="row g-3">
+    <!-- Kartu 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm rounded-3">
+        <div class="card-img-fallback" aria-label="Ilustrasi kegiatan upacara peringatan hari pendidikan nasional dengan peserta baris berbaris dan bendera merah putih">
+          <i class="bi bi-caret-right-square"></i> Gambar Berita
+        </div>
+        <div class="card-body">
+          <span class="card-news-type Pengumuman mb-2 d-inline-block small-badge">Pengumuman</span>
+          <h6 class="text-truncate fw-semibold">Upacara Peringatan Hari Pendidikan Nasional 2025</h6>
+          <p class="text-ellipsis-3 small">MAN 4 Bantul menggelar upacara peringatan Hari Pendidikan Nasional dengan tema "Bergerak Bersama, Rayakan Merdeka Belajar".</p>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted"><i class="bi bi-clock me-1"></i>25 Mei 2025 &bull; 245 views</small>
+            <a href="detail.html" class="small text-success">Baca &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartu 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm rounded-3">
+        <div class="card-img-fallback" aria-label="Ilustrasi gedung dan peralatan laboratorium sains modern">
+          <i class="bi bi-caret-right-square"></i> Gambar Berita
+        </div>
+        <div class="card-body">
+          <span class="card-news-type Prestasi mb-2 d-inline-block small-badge" style="background:#0dcaf0;">Prestasi</span>
+          <h6 class="text-truncate fw-semibold">Peresmian Laboratorium Sains Modern</h6>
+          <p class="text-ellipsis-3 small">MAN 4 Bantul meresmikan laboratorium sains modern dengan peralatan terkini untuk mendukung pembelajaran STEM.</p>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">23 Juni 2025 &bull; 153 views</small>
+            <a href="detail.html" class="small text-success">Baca &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartu 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm rounded-3">
+        <div class="card-img-fallback" aria-label="Ilustrasi kunjungan industri ke PT Krakatau Steel dengan siswa dan gedung pabrik di latar belakang">
+          <i class="bi bi-caret-right-square"></i> Gambar Berita
+        </div>
+        <div class="card-body">
+          <span class="card-news-type Prestasi mb-2 d-inline-block small-badge" style="background:#198754;">Prestasi</span>
+          <h6 class="text-truncate fw-semibold">Kunjungan Industri ke PT Krakatau Steel</h6>
+          <p class="text-ellipsis-3 small">Siswa kelas XII IPA mengikuti kunjungan industri ke PT Krakatau Steel untuk mempelajari proses produksi baja.</p><br>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">18 Juni 2025 &bull; 105 views</small>
+            <a href="detail.html" class="small text-success">Baca &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Berita Prestasi -->
+<section class="container mt-5">
+  <div class="text-center mb-4">
+    <h4 class="fw-bold"><i class="bi bi-award-fill text-success me-2"></i>Berita Prestasi</h4>
+    <p class="text-muted">Kabar gembira pencapaian siswa-siswi MAN 4 Bantul</p>
+  </div>
+  <div class="row g-3">
+
+    <!-- Kartu 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-img-fallback" aria-label="Ilustrasi siswa menerima piala juara olimpiade matematika di Yogyakarta">
+          <i class="bi bi-caret-right-square"></i> Gambar Berita Prestasi
+        </div>
+        <div class="card-body">
+          <span class="card-news-type Prestasi mb-2 d-inline-block" style="background:#ffc107; color:#000;">Juara 1</span>
+          <h6 class="text-truncate fw-semibold">Ahmad Fauzi Raih Juara 1 Olimpiade Matematika Provinsi DIY</h6>
+          <p class="text-ellipsis-3 small">Siswa kelas XI IPA 1, Ahmad Fauzi, berhasil meraih juara 1 dalam Olimpiade
+            Matematika tingkat Provinsi DIY yang diselenggarakan di UMY.</p>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted"><i class="bi bi-clock me-1"></i>25 Mei 2025 &bull; 572 views</small>
+            <a href="detail.html" class="small text-success">Baca &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartu 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-img-fallback" aria-label="Ilustrasi siswa wanita menerima penghargaan juara 2 lomba karya tulis ilmiah nasional">
+          <i class="bi bi-caret-right-square"></i> Gambar Berita Prestasi
+        </div>
+        <div class="card-body">
+          <span class="card-news-type Prestasi mb-2 d-inline-block" style="background:#ffc107; color:#000;">Juara 2</span>
+          <h6 class="text-truncate fw-semibold">Siti Nurhaliza Juara 2 Lomba Karya Tulis Ilmiah Nasional</h6>
+          <p class="text-ellipsis-3 small">Siswa kelas XII IPS 2 berhasil meraih juara 2 dalam Lomba Karya Tulis
+            Ilmiah Nasional dengan tema "Inovasi Teknologi Ramah Lingkungan".</p>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">15 Juni 2025 &bull; 278 views</small>
+            <a href="detail.html" class="small text-success">Baca &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartu 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-img-fallback" aria-label="Ilustrasi tim robotika siswa yang meraih juara festival sains nasional tahun 2024">
+          <i class="bi bi-caret-right-square"></i> Gambar Berita Prestasi
+        </div>
+        <div class="card-body">
+          <span class="card-news-type Prestasi mb-2 d-inline-block" style="background:#ffc107; color:#000;">Juara 3</span>
+          <h6 class="text-truncate fw-semibold">Tim Robotika Juara 3 Festival Sains Nasional 2024</h6>
+          <p class="text-ellipsis-3 small">Tim Robotika MAN 4 Bantul yang terdiri dari 5 siswa berhasil meraih juara 3
+            dalam Festival Sains Nasional kategori Robot Line Follower.</p>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">10 Juni 2025 &bull; 116 views</small>
+            <a href="detail.html" class="small text-success">Baca &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Galeri Kegiatan -->
+    <section class="container mt-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fw-bold"><i class="bi bi-camera-fill text-success me-2"></i>Galeri Kegiatan</h4>
+        <a href="#" class="btn btn-outline-secondary mt-3 mt-md-0">Lihat Galeri Lengkap &rsaquo;</a>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div class="bg-light rounded shadow-sm" style="height:200px; overflow:hidden;">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/405e022e-633d-4692-892a-ac862b4f5c86.png"
+              alt="Foto dokumentasi kegiatan siswa MAN 4 Bantul dalam acara kegiatan edukasi outdoor dengan latar belakang pepohonan hijau"
+              class="w-100 h-100 object-fit-cover" onerror="this.style.display='none';" />
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bg-light rounded shadow-sm" style="height:200px; overflow:hidden;">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95f2c998-71d0-439e-a3ae-720244f0f53d.png"
+              alt="Foto dokumentasi kegiatan lomba cerdas cermat siswa MAN 4 Bantul di aula sekolah dengan peserta antusias"
+              class="w-100 h-100 object-fit-cover" onerror="this.style.display='none';" />
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bg-light rounded shadow-sm" style="height:200px; overflow:hidden;">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ffda01d2-6c60-45fd-b17d-66f1c1f71812.png"
+              alt="Foto dokumentasi pelatihan sains dengan alat praktek di laboratorium modern MAN 4 Bantul oleh siswa dan guru"
+              class="w-100 h-100 object-fit-cover" onerror="this.style.display='none';" />
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bg-light rounded shadow-sm" style="height:200px; overflow:hidden;">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1d1be2e8-2275-45bc-a03e-05c681a3e107.png"
+              alt="Foto dokumentasi kegiatan pengabdian masyarakat oleh siswa MAN 4 Bantul dalam acara sosial lingkungan"
+              class="w-100 h-100 object-fit-cover" onerror="this.style.display='none';" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Unggulan -->
+    <section class="container mt-5 text-center">
+      <h4 class="fw-bold mb-3">Program Unggulan</h4>
+      <p class="text-muted mb-5">MAN 4 Bantul menyediakan berbagai program unggulan untuk mengembangkan potensi
+        siswa dalam bidang akademik dan non-akademik</p>
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 border-top border-success rounded-3">
+            <div class="card-img-fallback p-4" aria-label="Ikon buku terbuka hijau dan biru untuk Program IPA">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#198754" class="bi bi-book"
+                viewBox="0 0 16 16">
+                <path
+                  d="M1 2.828c.885-.37 2.154-.77 3.388-.878 1.08-.095 2.042.134 2.83.335a5.984 5.984 0 0 1 2.4 1.176c.493.417.828.75 1.05 1v7.507c-.4-.141-.857-.293-1.274-.444-.68-.231-1.452-.501-2.315-.626A33.27 33.27 0 0 0 4 9.48V2.828z" />
+                <path
+                  d="M13 2.828v6.651a33.269 33.269 0 0 0-3.593.862c-.787.172-1.54.355-2.275.515-.507.104-.98.15-1.364.14a1.988 1.988 0 0 1-.355-.043V2.828c.371-.208.86-.376 1.403-.464a8.6 8.6 0 0 1 2.068-.12c.908.103 1.736.423 2.426.657z" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="fw-semibold">Program IPA</h5>
+              <p class="small text-muted">Program Ilmu Pengetahuan Alam dengan fokus pada matematika, fisika, kimia, dan
+                biologi yang terintegrasi dengan nilai-nilai Islam.</p>
+              <a href="#" class="text-success small fw-semibold text-decoration-none">Pelajari Lebih Lanjut &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 border-top border-success rounded-3">
+            <div class="card-img-fallback p-4" aria-label="Ikon buku terbuka hijau untuk Program IPS">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#51cf66" class="bi bi-book" viewBox="0 0 16 16">
+                <path
+                  d="M1 2.828c.885-.37 2.154-.77 3.388-.878 1.08-.095 2.042.134 2.83.335a5.984 5.984 0 0 1 2.4 1.176c.493.417.828.75 1.05 1v7.507c-.4-.141-.857-.293-1.274-.444-.68-.231-1.452-.501-2.315-.626A33.27 33.27 0 0 0 4 9.48V2.828z" />
+                <path
+                  d="M13 2.828v6.651a33.269 33.269 0 0 0-3.593.862c-.787.172-1.54.355-2.275.515-.507.104-.98.15-1.364.14a1.988 1.988 0 0 1-.355-.043V2.828c.371-.208.86-.376 1.403-.464a8.6 8.6 0 0 1 2.068-.12c.908.103 1.736.423 2.426.657z" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="fw-semibold">Program IPS</h5>
+              <p class="small text-muted">Program Ilmu Pengetahuan Sosial yang mengembangkan pemahaman tentang masyarakat,
+                ekonomi, dan sejarah dalam perspektif Islam.</p>
+              <a href="#" class="text-success small fw-semibold text-decoration-none">Pelajari Lebih Lanjut &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 border-top border-success rounded-3">
+            <div class="card-img-fallback p-4" aria-label="Ikon buku terbuka hijau untuk Program Keagamaan">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#20c997" class="bi bi-book" viewBox="0 0 16 16">
+                <path
+                  d="M1 2.828c.885-.37 2.154-.77 3.388-.878 1.08-.095 2.042.134 2.83.335a5.984 5.984 0 0 1 2.4 1.176c.493.417.828.75 1.05 1v7.507c-.4-.141-.857-.293-1.274-.444-.68-.231-1.452-.501-2.315-.626A33.27 33.27 0 0 0 4 9.48V2.828z" />
+                <path
+                  d="M13 2.828v6.651a33.269 33.269 0 0 0-3.593.862c-.787.172-1.54.355-2.275.515-.507.104-.98.15-1.364.14a1.988 1.988 0 0 1-.355-.043V2.828c.371-.208.86-.376 1.403-.464a8.6 8.6 0 0 1 2.068-.12c.908.103 1.736.423 2.426.657z" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="fw-semibold">Program Keagamaan</h5>
+              <p class="small text-muted">Program khusus yang memperdalam ilmu-ilmu keislaman, tauhid Al-Qur'an, dan
+                pengembangan karakter Islami.</p>
+              <a href="#" class="text-success small fw-semibold text-decoration-none">Pelajari Lebih Lanjut &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Layanan Digital -->
+    <section class="container mt-5 text-center">
+      <h4 class="fw-bold mb-3"><i class="bi bi-cloud-download-fill text-success me-2"></i>Layanan Digital</h4>
+      <p class="text-muted mb-5">Akses mudah ke berbagai layanan sekolah secara online</p>
+      <div class="row g-3 justify-content-center">
+
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm p-3">
+            <div class="mb-3 text-success" style="font-size: 2rem;">
+              <i class="bi bi-journal-text"></i>
+            </div>
+            <h6 class="fw-semibold">E-Learning</h6>
+            <p class="small text-muted mb-3">Platform pembelajaran online untuk siswa</p>
+            <a href="#" class="small fw-semibold text-success text-decoration-none" target="_blank" rel="noopener">Akses
+              &rsaquo;</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm p-3">
+            <div class="mb-3 text-success" style="font-size: 2rem;">
+              <i class="bi bi-person-badge"></i>
+            </div>
+            <h6 class="fw-semibold">Portal Siswa</h6>
+            <p class="small text-muted mb-3">Informasi nilai, absensi, dan jadwal</p>
+            <a href="#" class="small fw-semibold text-success text-decoration-none" target="_blank" rel="noopener">Login
+              &rsaquo;</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm p-3">
+            <div class="mb-3 text-success" style="font-size: 2rem;">
+              <i class="bi bi-download"></i>
+            </div>
+            <h6 class="fw-semibold">Download Center</h6>
+            <p class="small text-muted mb-3">Unduh formulir dan dokumen penting</p>
+            <a href="#" class="small fw-semibold text-success text-decoration-none" target="_blank" rel="noopener">Unduh
+              &rsaquo;</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card shadow-sm p-3">
+            <div class="mb-3 text-success" style="font-size: 2rem;">
+              <i class="bi bi-calendar-event"></i>
+            </div>
+            <h6 class="fw-semibold">Kalender Akademik</h6>
+            <p class="small text-muted mb-3">Jadwal kegiatan dan agenda sekolah</p>
+            <a href="#" class="small fw-semibold text-success text-decoration-none" target="_blank" rel="noopener">Lihat
+              &rsaquo;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <div class="footer-branding mb-2 d-flex align-items-center gap-2">
+            <span class="border border-2 border-success rounded-circle d-flex align-items-center justify-content-center"
+              style="min-width: 40px; height: 40px; font-size: 1.25rem;">M4B</span>
+            MAN 4 BANTUL
+          </div>
+          <p>Madrasah Aliyah Negeri 4 Bantul berkomitmen memberikan pendidikan berkualitas yang
+            mengintegrasikan ilmu pengetahuan dan nilai-nilai Islam.</p>
+          <div class="footer-social d-flex gap-3">
+            <a href="#" aria-label="Facebook MAN 4 Bantul"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter MAN 4 Bantul"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="YouTube MAN 4 Bantul"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="Instagram MAN 4 Bantul"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h6 class="text-white fw-semibold mb-3">Menu Utama</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Profil Sekolah</a></li>
+            <li><a href="#">Visi & Misi</a></li>
+            <li><a href="#">Struktur Organisasi</a></li>
+            <li><a href="#">Fasilitas</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="text-white fw-semibold mb-3">Akademik</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Kurikulum</a></li>
+            <li><a href="#">Program Studi</a></li>
+            <li><a href="#">Ekstrakurikuler</a></li>
+            <li><a href="#">Berita & Prestasi</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-white fw-semibold mb-3">Kontak</h6>
+          <address style="font-style: normal;">
+            Jl. Raya Imogiri No.121, Bantul, DIY 55771<br />
+            Telepon: (0274) 123456<br />
+            Email: <a href="mailto:info@m4bantul.ac.id" class="text-white-50">info@m4bantul.ac.id</a>
+          </address>
+        </div>
+      </div>
+      <div class="text-center mt-4 pt-4 border-top border-white-25">
+        © 2025 MAN 4 Bantul. Semua hak cipta dilindungi.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+
+
+</body>
+
+</html>
+
